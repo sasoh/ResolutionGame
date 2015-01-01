@@ -77,6 +77,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOZ-ld-Kzg">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-au-cFM">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                        <color key="backgroundColor" red="0.51324866865162866" green="0.43221894418344076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="TEX-r5-rgP"/>
+                                            <constraint firstAttribute="height" constant="160" id="UbF-uC-NuA"/>
+                                        </constraints>
+                                        <state key="normal" title="1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="oAC-jh-wub"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLe-hA-BQD">
                                         <rect key="frame" x="0.0" y="160" width="100" height="160"/>
                                         <color key="backgroundColor" red="1" green="0.28748003265706934" blue="0.68509570507352779" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,7 +133,7 @@
                                             <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="pFD-97-jOp"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-1W-yZh">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-1W-yZh" customClass="GameManagerView">
                                         <rect key="frame" x="108" y="8" width="352" height="304"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOh-Ea-ik3">
@@ -137,27 +151,22 @@
                                                     <action selector="didPressBackButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="55c-wL-92Y"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sprite_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="ata-NX-MeB">
+                                                <rect key="frame" x="145" y="62" width="63" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="63" id="oUF-Qx-At4"/>
+                                                    <constraint firstAttribute="height" constant="128" id="x82-Ab-diH"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="ata-NX-MeB" secondAttribute="centerX" id="3L4-k4-FfL"/>
                                             <constraint firstAttribute="centerY" secondItem="OOh-Ea-ik3" secondAttribute="centerY" constant="130" id="6dK-yi-qGU"/>
+                                            <constraint firstAttribute="centerY" secondItem="ata-NX-MeB" secondAttribute="centerY" constant="26" id="NAC-Hb-1uP"/>
                                             <constraint firstAttribute="centerX" secondItem="OOh-Ea-ik3" secondAttribute="centerX" id="gYb-Uu-ca8"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-au-cFM">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
-                                        <color key="backgroundColor" red="0.51324866865162866" green="0.43221894418344076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="TEX-r5-rgP"/>
-                                            <constraint firstAttribute="height" constant="160" id="UbF-uC-NuA"/>
-                                        </constraints>
-                                        <state key="normal" title="1">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="oAC-jh-wub"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -185,8 +194,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="_gameManager" destination="ZK4-1W-yZh" id="1fl-Zm-jyD"/>
                         <outlet property="_mainView" destination="pOZ-ld-Kzg" id="Bd4-a9-TVb"/>
-                        <outlet property="_mapView" destination="ZK4-1W-yZh" id="jYe-IH-z0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2B6-72-U9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,4 +263,7 @@
             <point key="canvasLocation" x="418" y="389"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sprite_arrow_down.png" width="63" height="128"/>
+    </resources>
 </document>

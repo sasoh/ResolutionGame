@@ -7,11 +7,8 @@
 //
 
 #import "GameScreenViewController.h"
-#import "GameManager.h"
 
-@interface GameScreenViewController () {
-    GameManager *_gameManager;
-}
+@interface GameScreenViewController ()
 
 @end
 
@@ -36,8 +33,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     
-    _gameManager = [[GameManager alloc] init];
-    [_gameManager setView:_mapView];
     [_gameManager setup];
     [_gameManager start];
     

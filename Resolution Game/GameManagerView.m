@@ -6,22 +6,14 @@
 //  Copyright (c) 2015 -. All rights reserved.
 //
 
-#import "GameManager.h"
+#import "GameManagerView.h"
 
-@implementation GameManager
+@implementation GameManagerView
 
 - (void)setup
 {
     
     NSLog(@"Game setup.");
-    if (_view != nil) {
-        // load map
-        
-        // prepare to start
-        
-    } else {
-        NSLog(@"Game manager's view must be set before setup.");
-    }
     
 }
 

@@ -11,10 +11,7 @@
 
 //! @brief Main game logic class
 //! @details Handles level visualization & input handling
-@interface GameManager : NSObject
-
-//! @brief View that holds game visuals, must be assigned before setup
-@property (nonatomic, weak) UIView *view;
+@interface GameManagerView : UIView
 
 //! @brief Clears game view & loads level
 - (void)setup;
