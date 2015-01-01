@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7CD94251-E78D-4DB4-9E68-734F5103C4F1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Resolution Game</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F481E2A8D7B5540074F3B4AA0479EBE12A8FAF40</key>
+		<string>https://github.com/sasoh/ResolutionGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Resolution Game.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F481E2A8D7B5540074F3B4AA0479EBE12A8FAF40</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sasoh/ResolutionGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F481E2A8D7B5540074F3B4AA0479EBE12A8FAF40</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F481E2A8D7B5540074F3B4AA0479EBE12A8FAF40</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ResolutionGame</string>
+		</dict>
+	</array>
+</dict>
+</plist>

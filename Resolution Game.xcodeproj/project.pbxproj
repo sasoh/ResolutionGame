@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D4F9AFC1A55C335001FCBA2 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F9AFB1A55C335001FCBA2 /* GameManager.m */; };
 		2D7460A51A55974E00A2B9CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460A41A55974E00A2B9CA /* main.m */; };
 		2D7460A81A55974E00A2B9CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460A71A55974E00A2B9CA /* AppDelegate.m */; };
 		2D7460AB1A55974E00A2B9CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460AA1A55974E00A2B9CA /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4F9AFA1A55C335001FCBA2 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		2D4F9AFB1A55C335001FCBA2 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		2D74609F1A55974E00A2B9CA /* Resolution Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resolution Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7460A31A55974E00A2B9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7460A41A55974E00A2B9CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D4F9AF91A55C2DB001FCBA2 /* Game Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2D4F9AFA1A55C335001FCBA2 /* GameManager.h */,
+				2D4F9AFB1A55C335001FCBA2 /* GameManager.m */,
+			);
+			name = "Game Classes";
+			sourceTree = "<group>";
+		};
 		2D7460961A55974E00A2B9CA = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +76,7 @@
 		2D7460A11A55974E00A2B9CA /* Resolution Game */ = {
 			isa = PBXGroup;
 			children = (
+				2D4F9AF91A55C2DB001FCBA2 /* Game Classes */,
 				2D7460C81A55996A00A2B9CA /* View Controllers */,
 				2D7460A61A55974E00A2B9CA /* AppDelegate.h */,
 				2D7460A71A55974E00A2B9CA /* AppDelegate.m */,
@@ -168,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7460AB1A55974E00A2B9CA /* ViewController.m in Sources */,
+				2D4F9AFC1A55C335001FCBA2 /* GameManager.m in Sources */,
 				2D7460A81A55974E00A2B9CA /* AppDelegate.m in Sources */,
 				2D7460CB1A55998100A2B9CA /* GameScreenViewController.m in Sources */,
 				2D7460A51A55974E00A2B9CA /* main.m in Sources */,
@@ -312,6 +326,7 @@
 				2D7460C41A55974E00A2B9CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

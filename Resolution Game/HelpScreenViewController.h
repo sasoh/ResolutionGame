@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+//! @brief Help/credits screen
 @interface HelpScreenViewController : ViewController
 
 @end

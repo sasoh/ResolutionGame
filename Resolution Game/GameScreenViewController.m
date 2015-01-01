@@ -7,34 +7,50 @@
 //
 
 #import "GameScreenViewController.h"
+#import "GameManager.h"
 
-@interface GameScreenViewController ()
+@interface GameScreenViewController () {
+    GameManager *_gameManager;
+}
 
 @end
 
 @implementation GameScreenViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
+
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    _gameManager = [[GameManager alloc] init];
+    [_gameManager setView:_mapView];
+    [_gameManager setup];
+    [_gameManager start];
+    
 }
-*/
 
-- (IBAction)backButtonPressed:(id)sender
+- (IBAction)didPressButton:(id)sender
+{
+    
+    [_gameManager didPressButtonWithIndex:(int)[sender tag]];
+    
+}
+
+- (IBAction)didPressBackButton:(id)sender
 {
     
     [[self navigationController] popViewControllerAnimated:YES];

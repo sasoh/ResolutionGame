@@ -8,6 +8,11 @@
 
 #import "ViewController.h"
 
-@interface GameScreenViewController : ViewController
+//! @brief Game view controller
+//! @details Contains UI & game view
+@interface GameScreenViewController : ViewController {
+    IBOutlet UIView *_mainView;
+    IBOutlet UIView *_mapView;
+}
 
 @end
