@@ -1,4 +1,4 @@
 var category_game_screen_view_controller_07_08 =
 [
-    [ "_gameManager", "category_game_screen_view_controller_07_08.html#a5888e78d2ad06977df9a8f3a0ad389a4", null ]
+    [ "IBOutletCollection", "category_game_screen_view_controller_07_08.html#aea71b21fdb5cacab8e78321b7b5e9229", null ]
 ];

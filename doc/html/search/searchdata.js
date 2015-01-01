@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "adghsv",
-  1: "aghv",
-  2: "ds",
-  3: "v"
+  0: "_acdghstuv",
+  1: "aghtv",
+  2: "cdgsu",
+  3: "_"
 };
 
 var indexSectionNames =
@@ -11,7 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "functions",
-  3: "properties"
+  3: "variables"
 };
 
 var indexSectionLabels =
@@ -19,6 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Functions",
-  3: "Properties"
+  3: "Variables"
 };
 

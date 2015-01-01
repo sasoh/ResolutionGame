@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setup',['setup',['../interface_game_manager.html#a7603a8cb3a992b41cc4d843e92d1b47c',1,'GameManager']]],
-  ['start',['start',['../interface_game_manager.html#a8460b2f4f44c19dd405e4163fe6cb5cf',1,'GameManager']]]
+  ['didpressbuttonwithindex_3a',['didPressButtonWithIndex:',['../interface_game_manager_view.html#abc8a953cc6268b28b0c287f344216a08',1,'GameManagerView::didPressButtonWithIndex:()'],['../interface_timeline_view.html#a9a387fa5b65fd9d818fbb3c938a92f83',1,'TimelineView::didPressButtonWithIndex:()']]]
 ];

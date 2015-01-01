@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['gamemanager',['GameManager',['../interface_game_manager.html',1,'']]],
-  ['gamescreenviewcontroller',['GameScreenViewController',['../interface_game_screen_view_controller.html',1,'']]],
-  ['gamescreenviewcontroller_28_29',['GameScreenViewController()',['../category_game_screen_view_controller_07_08.html',1,'']]]
+  ['cleanunusedsegments',['cleanUnusedSegments',['../category_timeline_view_07_08.html#a97d70f8045989ea8312f416542e4acdc',1,'TimelineView()']]],
+  ['createinitialsegments',['createInitialSegments',['../category_timeline_view_07_08.html#a94b60645d8eb8d9913e7d6a1125ea091',1,'TimelineView()']]]
 ];
