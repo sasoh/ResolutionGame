@@ -8,7 +8,9 @@
 
 #import "GameScreenViewController.h"
 
-@interface GameScreenViewController ()
+@interface GameScreenViewController () {
+    IBOutletCollection(UIButton) NSArray *_actionButtons;
+}
 
 @end
 
@@ -32,6 +34,16 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    NSArray *colors = @[
+                        [UIColor redColor],
+                        [UIColor greenColor],
+                        [UIColor blueColor],
+                        [UIColor yellowColor]
+                        ];
+    for (UIButton *button in _actionButtons) {
+        [button setBackgroundColor:colors[(int)[button tag] - 1]];
+    }
     
     [_gameManager setup];
     [_gameManager start];

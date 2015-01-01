@@ -77,20 +77,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOZ-ld-Kzg">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-au-cFM">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
-                                        <color key="backgroundColor" red="0.51324866865162866" green="0.43221894418344076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="TEX-r5-rgP"/>
-                                            <constraint firstAttribute="height" constant="160" id="UbF-uC-NuA"/>
-                                        </constraints>
-                                        <state key="normal" title="1">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="oAC-jh-wub"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLe-hA-BQD">
                                         <rect key="frame" x="0.0" y="160" width="100" height="160"/>
                                         <color key="backgroundColor" red="1" green="0.28748003265706934" blue="0.68509570507352779" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,6 +156,20 @@
                                             <outlet property="_arrowView" destination="ata-NX-MeB" id="L0y-Rn-azp"/>
                                         </connections>
                                     </view>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-au-cFM">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                        <color key="backgroundColor" red="0.51324866865162866" green="0.43221894418344076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="TEX-r5-rgP"/>
+                                            <constraint firstAttribute="height" constant="160" id="UbF-uC-NuA"/>
+                                        </constraints>
+                                        <state key="normal" title="1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="oAC-jh-wub"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -199,6 +199,10 @@
                     <connections>
                         <outlet property="_gameManager" destination="ZK4-1W-yZh" id="1fl-Zm-jyD"/>
                         <outlet property="_mainView" destination="pOZ-ld-Kzg" id="Bd4-a9-TVb"/>
+                        <outletCollection property="_actionButtons" destination="vTJ-au-cFM" id="OZ9-tM-3af"/>
+                        <outletCollection property="_actionButtons" destination="jLe-hA-BQD" id="Xfq-Pr-qHv"/>
+                        <outletCollection property="_actionButtons" destination="GdR-Yc-j0U" id="gpo-xu-CTv"/>
+                        <outletCollection property="_actionButtons" destination="OGI-LZ-jwO" id="aXs-C9-jXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2B6-72-U9z" userLabel="First Responder" sceneMemberID="firstResponder"/>

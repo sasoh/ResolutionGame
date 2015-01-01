@@ -10,6 +10,7 @@
 		2D4F9AFC1A55C335001FCBA2 /* GameManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F9AFB1A55C335001FCBA2 /* GameManagerView.m */; };
 		2D4F9B021A55F1B2001FCBA2 /* sprite_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F9B001A55F1B2001FCBA2 /* sprite_arrow_down.png */; };
 		2D4F9B031A55F1B2001FCBA2 /* sprite_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F9B011A55F1B2001FCBA2 /* sprite_arrow_down@2x.png */; };
+		2D4F9B071A55FF34001FCBA2 /* TimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F9B061A55FF34001FCBA2 /* TimelineView.m */; };
 		2D7460A51A55974E00A2B9CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460A41A55974E00A2B9CA /* main.m */; };
 		2D7460A81A55974E00A2B9CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460A71A55974E00A2B9CA /* AppDelegate.m */; };
 		2D7460AB1A55974E00A2B9CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460AA1A55974E00A2B9CA /* ViewController.m */; };
@@ -25,6 +26,8 @@
 		2D4F9AFB1A55C335001FCBA2 /* GameManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManagerView.m; sourceTree = "<group>"; };
 		2D4F9B001A55F1B2001FCBA2 /* sprite_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_arrow_down.png; sourceTree = "<group>"; };
 		2D4F9B011A55F1B2001FCBA2 /* sprite_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_arrow_down@2x.png"; sourceTree = "<group>"; };
+		2D4F9B051A55FF34001FCBA2 /* TimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineView.h; sourceTree = "<group>"; };
+		2D4F9B061A55FF34001FCBA2 /* TimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineView.m; sourceTree = "<group>"; };
 		2D74609F1A55974E00A2B9CA /* Resolution Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resolution Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7460A31A55974E00A2B9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7460A41A55974E00A2B9CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		2D4F9AF91A55C2DB001FCBA2 /* Game Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2D4F9B041A55FF12001FCBA2 /* Timeline */,
 				2D4F9AFA1A55C335001FCBA2 /* GameManagerView.h */,
 				2D4F9AFB1A55C335001FCBA2 /* GameManagerView.m */,
 			);
@@ -84,6 +88,15 @@
 				2D4F9B011A55F1B2001FCBA2 /* sprite_arrow_down@2x.png */,
 			);
 			path = "Game Screen";
+			sourceTree = "<group>";
+		};
+		2D4F9B041A55FF12001FCBA2 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				2D4F9B051A55FF34001FCBA2 /* TimelineView.h */,
+				2D4F9B061A55FF34001FCBA2 /* TimelineView.m */,
+			);
+			name = Timeline;
 			sourceTree = "<group>";
 		};
 		2D7460961A55974E00A2B9CA = {
@@ -215,6 +228,7 @@
 				2D7460AB1A55974E00A2B9CA /* ViewController.m in Sources */,
 				2D4F9AFC1A55C335001FCBA2 /* GameManagerView.m in Sources */,
 				2D7460A81A55974E00A2B9CA /* AppDelegate.m in Sources */,
+				2D4F9B071A55FF34001FCBA2 /* TimelineView.m in Sources */,
 				2D7460CB1A55998100A2B9CA /* GameScreenViewController.m in Sources */,
 				2D7460A51A55974E00A2B9CA /* main.m in Sources */,
 				2D7460CE1A55998E00A2B9CA /* HelpScreenViewController.m in Sources */,
