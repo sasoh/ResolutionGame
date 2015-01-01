@@ -151,7 +151,7 @@
                                                     <action selector="didPressBackButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="55c-wL-92Y"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sprite_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="ata-NX-MeB">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sprite_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="ata-NX-MeB">
                                                 <rect key="frame" x="145" y="62" width="63" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="63" id="oUF-Qx-At4"/>
@@ -166,6 +166,9 @@
                                             <constraint firstAttribute="centerY" secondItem="ata-NX-MeB" secondAttribute="centerY" constant="26" id="NAC-Hb-1uP"/>
                                             <constraint firstAttribute="centerX" secondItem="OOh-Ea-ik3" secondAttribute="centerX" id="gYb-Uu-ca8"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="_arrowView" destination="ata-NX-MeB" id="L0y-Rn-azp"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
