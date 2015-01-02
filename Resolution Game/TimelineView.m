@@ -18,6 +18,9 @@
     //! @brief Currently centered segment
     UIView *_currentSegment;
     
+    //! @brief Current segment index in level info array
+    int _currentSegmentIndex;
+    
     //! @brief Rightmost point of segments, will be used to determine if a new one should be spawned
     CGFloat _rightmostPosition;
     
@@ -26,6 +29,12 @@
 
     //! @brief Current segment is marked if the correct button was pressed, will be used to restrict to only 1 correct answer per segment
     BOOL _segmentMarked;
+
+    //! @brief Level configuration
+    NSDictionary *_levelInfo;
+    
+    //! @brief Level scroll speed, px/sec
+    CGFloat _speed;
 }
 
 //! @brief Generates first segments before the game begins
@@ -40,8 +49,11 @@
 //! @brief Helper function that constructs new segments
 - (void)generateSegmentWithTag:(int)tag andLength:(CGFloat)length;
 
-//! @brief Spawns a segment of random tag [1; 4] & and length of 50 or 100px
-- (void)generateRandomSegment;
+////! @brief Spawns a segment of random tag [1; 4] & and length of 50 or 100px
+//- (void)generateRandomSegment;
+
+//! @brief Spawns next segment from list
+- (void)loadNextSegment;
 
 @end
 
@@ -55,14 +67,17 @@
 }
 */
 
-- (void)setup
+- (void)setupForLevel:(NSDictionary *)levelInfo
 {
     
     _segmentsArray = [[NSMutableArray alloc] init];
     _cleanupArray = [[NSMutableArray alloc] init];
     _rightmostPosition = [self frame].size.width / 2; // initial position is center of view
     _currentSegment = nil;
+    _currentSegmentIndex = 0;
     _segmentMarked = NO;
+    _levelInfo = levelInfo;
+    _speed = [_levelInfo[@"speed"] floatValue];
     
     [self setClipsToBounds:YES];
     
@@ -83,30 +98,43 @@
     
     const static CGFloat offset = 5.0f; // some additional pixels for the check so no edge is visible
     while (_rightmostPosition < [self frame].size.width + offset) {
-        [self generateRandomSegment];
+        [self loadNextSegment];
     }
     
 }
 
-- (void)generateRandomSegment
+//- (void)generateRandomSegment
+//{
+//    
+//    // random length
+//    CGFloat length = 50.0f;
+//    if (rand() % 2 == 0) {
+//        length += 50.0f;
+//    }
+//    
+//    // prevent successive segments of same color
+//    static int lastGenerated = 0;
+//    int randomTag = 0;
+//    do {
+//        randomTag = (rand() % 4) + 1;
+//    } while (randomTag == lastGenerated);
+//    lastGenerated = randomTag;
+//    
+//    [self generateSegmentWithTag:randomTag andLength:length];
+//    
+//}
+
+- (void)loadNextSegment
 {
     
-    // random length
-    CGFloat length = 50.0f;
-    if (rand() % 2 == 0) {
-        length += 50.0f;
+    NSArray *parts = _levelInfo[@"parts"];
+    if (_currentSegmentIndex < [parts count]) {
+        NSDictionary *segmentInfo = parts[_currentSegmentIndex];
+        ++_currentSegmentIndex;
+        
+        [self generateSegmentWithTag:[segmentInfo[@"type"] intValue] andLength:[segmentInfo[@"length"] floatValue]];
     }
-    
-    // prevent successive segments of same color
-    static int lastGenerated = 0;
-    int randomTag = 0;
-    do {
-        randomTag = (rand() % 4) + 1;
-    } while (randomTag == lastGenerated);
-    lastGenerated = randomTag;
-    
-    [self generateSegmentWithTag:randomTag andLength:length];
-    
+
 }
 
 - (void)generateSegmentWithTag:(int)tag andLength:(CGFloat)length
@@ -137,19 +165,24 @@
 
 - (void)updateSegmentPositions:(NSTimeInterval)dt
 {
- 
-    const static CGFloat speed = 50.0f; // px/second
-    CGFloat distance = speed * dt;
+    
+    CGFloat distance = _speed * dt;
     
     _currentOffset += distance;
     _rightmostPosition -= distance;
     
+    // check for end level
+    if (_rightmostPosition <= [self frame].size.width / 2) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kTimelineViewLevelEndNotification object:nil];
+        return;
+    }
+    
     // infinite random generation for now
     const static CGFloat offset = 5.0f; // some additional pixels for the check so no edge is visible
     if (_rightmostPosition < [self frame].size.width + offset) {
-        [self generateRandomSegment];
+        [self loadNextSegment];
     }
-    
+
     for (UIView *sv in _segmentsArray) {
         CGRect tempRect = [sv frame];
         tempRect.origin.x -= distance;

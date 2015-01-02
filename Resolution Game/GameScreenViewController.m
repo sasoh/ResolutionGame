@@ -10,7 +10,11 @@
 
 @interface GameScreenViewController () {
     IBOutletCollection(UIButton) NSArray *_actionButtons;
+    IBOutlet UIView *_finishedView;
+    IBOutlet UIButton *_finishedBackButton;
 }
+
+- (void)showEndLevelView;
 
 @end
 
@@ -32,8 +36,17 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
+    
+    [super viewWillAppear:animated];
+    
+    [_finishedView setHidden:YES];
+    
+    // update button background image to a resizeable version
+    UIImage *backgroundImage = [UIImage imageNamed:@"sprite_button_background.png"];
+    UIImage *resizeableImage = [backgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(4.0f, 4.0f, 4.0f + 5.0f, 4.0f + 5.0f)];
+    [_finishedBackButton setBackgroundImage:resizeableImage forState:UIControlStateNormal];
     
     NSArray *colors = @[
                         [UIColor redColor],
@@ -45,8 +58,39 @@
         [button setBackgroundColor:colors[(int)[button tag] - 1]];
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showEndLevelView) name:kTimelineViewLevelEndNotification object:nil];
+    
+    [_gameManager setLevelInfo:_levelInfo];
     [_gameManager setup];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    [super viewDidAppear:animated];
+    
     [_gameManager start];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    [super viewWillDisappear:animated];
+    
+    [_gameManager stop];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
+- (void)showEndLevelView
+{
+    
+    [_gameManager stop];
+    
+    [_finishedView setHidden:NO];
     
 }
 

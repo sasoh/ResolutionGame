@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *kTimelineViewLevelEndNotification = @"kTimelineViewLevelEndNotification";
+
 @class TimelineView;
 
 @protocol TimelineViewDelegate <NSObject>
@@ -24,7 +26,7 @@
 @property (nonatomic, weak) id <TimelineViewDelegate> delegate;
 
 //! @brief Loads initial map segments
-- (void)setup;
+- (void)setupForLevel:(NSDictionary *)levelInfo;
 
 //! @brief Frame update function
 - (void)update:(NSTimeInterval)dt;

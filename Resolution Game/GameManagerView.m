@@ -7,12 +7,12 @@
 //
 
 #import "GameManagerView.h"
-#import "TimelineView.h"
 
 @interface GameManagerView () {
     IBOutlet UIImageView *_arrowView;
     NSDate *_lastFrameDate;
     TimelineView *_timelineView;
+    NSTimer *_gameTimer;
 }
 
 - (void)recursivelyAnimateFromNumber:(int)number;
@@ -26,23 +26,30 @@
 - (void)setup
 {
     
-    NSLog(@"Game setup.");
-    
-    // init timeline object & let it prepare first part of map
-    _timelineView = [[TimelineView alloc] initWithFrame:CGRectMake(0.0f, [_arrowView frame].origin.y + [_arrowView frame].size.height, [self frame].size.width, 50.0f)];
-    [_timelineView setDelegate:(id<TimelineViewDelegate>)self]; // cast to suppress warning
-    [_timelineView setup];
-    [_timelineView setHidden:YES];
-    [self addSubview:_timelineView];
+    if (_levelInfo != nil) {
+        // init timeline object & let it prepare first part of map
+        _timelineView = [[TimelineView alloc] initWithFrame:CGRectMake(0.0f, [_arrowView frame].origin.y + [_arrowView frame].size.height, [self frame].size.width, 50.0f)];
+        [_timelineView setDelegate:self]; // cast to suppress warning
+        [_timelineView setupForLevel:_levelInfo];
+        [_timelineView setHidden:YES];
+        [self addSubview:_timelineView];
+    } else {
+        NSLog(@"Failed loading level info.");
+    }
     
 }
 
 - (void)start
 {
     
-    NSLog(@"Game start.");
-    
     [self animateCountIn];
+    
+}
+
+- (void)stop
+{
+    
+    [_gameTimer invalidate];
     
 }
 
@@ -78,9 +85,9 @@
         // activate game loop
         _lastFrameDate = [NSDate date];
     
-        NSTimer *gameTimer = [NSTimer timerWithTimeInterval:1.0f / 60.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
+        _gameTimer = [NSTimer timerWithTimeInterval:1.0f / 60.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
         NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        [runLoop addTimer:gameTimer forMode:NSDefaultRunLoopMode];
+        [runLoop addTimer:_gameTimer forMode:NSDefaultRunLoopMode];
     }
     
 }
@@ -100,7 +107,7 @@
 - (void)animateCountIn
 {
     
-    [self recursivelyAnimateFromNumber:1];
+    [self recursivelyAnimateFromNumber:3];
     
 }
 

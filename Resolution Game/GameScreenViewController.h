@@ -16,4 +16,6 @@
     IBOutlet GameManagerView *_gameManager;
 }
 
+@property (nonatomic, strong) NSDictionary *levelInfo;
+
 @end
