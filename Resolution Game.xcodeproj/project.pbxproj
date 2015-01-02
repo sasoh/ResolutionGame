@@ -19,6 +19,10 @@
 		2D7460B31A55974E00A2B9CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7460B11A55974E00A2B9CA /* LaunchScreen.xib */; };
 		2D7460CB1A55998100A2B9CA /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460CA1A55998100A2B9CA /* GameScreenViewController.m */; };
 		2D7460CE1A55998E00A2B9CA /* HelpScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460CD1A55998E00A2B9CA /* HelpScreenViewController.m */; };
+		2DD0A9AD1A5617E500F2FF79 /* sprite_button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0A9A91A5617E500F2FF79 /* sprite_button_background.png */; };
+		2DD0A9AE1A5617E500F2FF79 /* sprite_button_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0A9AA1A5617E500F2FF79 /* sprite_button_background@2x.png */; };
+		2DD0A9AF1A5617E500F2FF79 /* sprite_menu_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0A9AB1A5617E500F2FF79 /* sprite_menu_background.png */; };
+		2DD0A9B01A5617E500F2FF79 /* sprite_menu_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0A9AC1A5617E500F2FF79 /* sprite_menu_background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		2D7460CA1A55998100A2B9CA /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		2D7460CC1A55998E00A2B9CA /* HelpScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScreenViewController.h; sourceTree = "<group>"; };
 		2D7460CD1A55998E00A2B9CA /* HelpScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpScreenViewController.m; sourceTree = "<group>"; };
+		2DD0A9A91A5617E500F2FF79 /* sprite_button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_button_background.png; sourceTree = "<group>"; };
+		2DD0A9AA1A5617E500F2FF79 /* sprite_button_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_button_background@2x.png"; sourceTree = "<group>"; };
+		2DD0A9AB1A5617E500F2FF79 /* sprite_menu_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_menu_background.png; sourceTree = "<group>"; };
+		2DD0A9AC1A5617E500F2FF79 /* sprite_menu_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_menu_background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				2D4F9AFF1A55F1B2001FCBA2 /* Game Screen */,
+				2DD0A9A81A5617E500F2FF79 /* Menus */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -153,6 +162,17 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		2DD0A9A81A5617E500F2FF79 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0A9A91A5617E500F2FF79 /* sprite_button_background.png */,
+				2DD0A9AA1A5617E500F2FF79 /* sprite_button_background@2x.png */,
+				2DD0A9AB1A5617E500F2FF79 /* sprite_menu_background.png */,
+				2DD0A9AC1A5617E500F2FF79 /* sprite_menu_background@2x.png */,
+			);
+			path = Menus;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,7 +234,11 @@
 				2D4F9B031A55F1B2001FCBA2 /* sprite_arrow_down@2x.png in Resources */,
 				2D7460AE1A55974E00A2B9CA /* Main.storyboard in Resources */,
 				2D7460B31A55974E00A2B9CA /* LaunchScreen.xib in Resources */,
+				2DD0A9B01A5617E500F2FF79 /* sprite_menu_background@2x.png in Resources */,
+				2DD0A9AD1A5617E500F2FF79 /* sprite_button_background.png in Resources */,
+				2DD0A9AE1A5617E500F2FF79 /* sprite_button_background@2x.png in Resources */,
 				2D7460B01A55974E00A2B9CA /* Images.xcassets in Resources */,
+				2DD0A9AF1A5617E500F2FF79 /* sprite_menu_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

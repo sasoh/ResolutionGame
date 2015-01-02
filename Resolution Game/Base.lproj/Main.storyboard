@@ -16,39 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIT-t4-heT">
-                                <rect key="frame" x="209" y="164" width="150" height="44"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="EYb-vZ-84p"/>
-                                    <constraint firstAttribute="height" constant="44" id="xOz-gS-vKn"/>
-                                </constraints>
-                                <state key="normal" title="Help!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gV2-JM-f4m" kind="show" identifier="helpSegue" id="1XF-A5-IKx"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sprite_menu_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="qAg-5t-kCh">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oT4-rA-Ird">
                                 <rect key="frame" x="209" y="112" width="150" height="44"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="5Te-7M-qy2"/>
                                     <constraint firstAttribute="height" constant="44" id="cDa-N3-Fq7"/>
                                 </constraints>
-                                <state key="normal" title="Start!">
+                                <state key="normal" title="Start" backgroundImage="sprite_button_background.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="NNd-Cl-KfY" kind="show" identifier="gameSegue" id="zBX-lL-Icn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIT-t4-heT">
+                                <rect key="frame" x="209" y="164" width="150" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="EYb-vZ-84p"/>
+                                    <constraint firstAttribute="height" constant="44" id="xOz-gS-vKn"/>
+                                </constraints>
+                                <state key="normal" title="Help" backgroundImage="sprite_button_background.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gV2-JM-f4m" kind="show" identifier="helpSegue" id="1XF-A5-IKx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qAg-5t-kCh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5dL-mI-d9b"/>
+                            <constraint firstItem="qAg-5t-kCh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Te4-mR-CUO"/>
                             <constraint firstAttribute="centerX" secondItem="oT4-rA-Ird" secondAttribute="centerX" id="dzt-sY-Dto"/>
+                            <constraint firstAttribute="trailing" secondItem="qAg-5t-kCh" secondAttribute="trailing" id="fg9-61-kzA"/>
                             <constraint firstAttribute="centerX" secondItem="YIT-t4-heT" secondAttribute="centerX" id="hxy-1S-HQp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="qAg-5t-kCh" secondAttribute="bottom" id="otc-w4-ZMD"/>
                             <constraint firstAttribute="centerY" secondItem="oT4-rA-Ird" secondAttribute="centerY" constant="26" id="xf1-7q-p5P"/>
                             <constraint firstAttribute="centerY" secondItem="YIT-t4-heT" secondAttribute="centerY" constant="-26" id="yfD-LQ-wCa"/>
                         </constraints>
@@ -57,6 +66,10 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outletCollection property="_buttons" destination="oT4-rA-Ird" id="rfz-o2-YCb"/>
+                        <outletCollection property="_buttons" destination="YIT-t4-heT" id="aSE-CZ-GCo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +87,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOZ-ld-Kzg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sprite_menu_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="XF8-SL-zBo">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOZ-ld-Kzg">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLe-hA-BQD">
@@ -119,43 +135,6 @@
                                             <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="pFD-97-jOp"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-1W-yZh" customClass="GameManagerView">
-                                        <rect key="frame" x="108" y="8" width="352" height="304"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOh-Ea-ik3">
-                                                <rect key="frame" x="154" y="0.0" width="44" height="44"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="44" id="0Op-Nj-OTU"/>
-                                                    <constraint firstAttribute="height" constant="44" id="O3H-8I-nXG"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title="Menu">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didPressBackButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="55c-wL-92Y"/>
-                                                </connections>
-                                            </button>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sprite_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="ata-NX-MeB">
-                                                <rect key="frame" x="145" y="62" width="63" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="63" id="oUF-Qx-At4"/>
-                                                    <constraint firstAttribute="height" constant="128" id="x82-Ab-diH"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="ata-NX-MeB" secondAttribute="centerX" id="3L4-k4-FfL"/>
-                                            <constraint firstAttribute="centerY" secondItem="OOh-Ea-ik3" secondAttribute="centerY" constant="130" id="6dK-yi-qGU"/>
-                                            <constraint firstAttribute="centerY" secondItem="ata-NX-MeB" secondAttribute="centerY" constant="26" id="NAC-Hb-1uP"/>
-                                            <constraint firstAttribute="centerX" secondItem="OOh-Ea-ik3" secondAttribute="centerX" id="gYb-Uu-ca8"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="_arrowView" destination="ata-NX-MeB" id="L0y-Rn-azp"/>
-                                        </connections>
-                                    </view>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-au-cFM">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
                                         <color key="backgroundColor" red="0.51324866865162866" green="0.43221894418344076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,8 +149,46 @@
                                             <action selector="didPressButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="oAC-jh-wub"/>
                                         </connections>
                                     </button>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-1W-yZh" customClass="GameManagerView">
+                                        <rect key="frame" x="108" y="8" width="352" height="304"/>
+                                        <subviews>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sprite_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="ata-NX-MeB">
+                                                <rect key="frame" x="145" y="62" width="63" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="63" id="oUF-Qx-At4"/>
+                                                    <constraint firstAttribute="height" constant="128" id="x82-Ab-diH"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOh-Ea-ik3">
+                                                <rect key="frame" x="154" y="0.0" width="45" height="46"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="1Jb-Ld-Qld"/>
+                                                    <constraint firstAttribute="height" constant="46" id="O9d-kB-JeE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="Back" backgroundImage="sprite_button_background.png">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressBackButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="55c-wL-92Y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="ata-NX-MeB" secondAttribute="centerX" id="3L4-k4-FfL"/>
+                                            <constraint firstAttribute="centerX" secondItem="OOh-Ea-ik3" secondAttribute="centerX" id="B49-01-udF"/>
+                                            <constraint firstAttribute="centerY" secondItem="OOh-Ea-ik3" secondAttribute="centerY" constant="129" id="HS2-eH-str"/>
+                                            <constraint firstAttribute="centerY" secondItem="ata-NX-MeB" secondAttribute="centerY" constant="26" id="NAC-Hb-1uP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="_arrowView" destination="ata-NX-MeB" id="L0y-Rn-azp"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="OGI-LZ-jwO" secondAttribute="trailing" id="5el-F9-0Bx"/>
                                     <constraint firstItem="jLe-hA-BQD" firstAttribute="leading" secondItem="pOZ-ld-Kzg" secondAttribute="leading" id="A5d-Lk-WCz"/>
@@ -221,15 +238,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sprite_menu_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="9yX-QB-Hc6">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resolution game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnK-li-yEx">
+                                <rect key="frame" x="219" y="30" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by Alexander Popov" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbR-nZ-mhY">
+                                <rect key="frame" x="219" y="59" width="130" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="This is my entry for January's topic of the www.onegameamonth.com initiative." translatesAutoresizingMaskIntoConstraints="NO" id="aD1-ZX-9Ct">
+                                <rect key="frame" x="16" y="84" width="536" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PC-8N-ptF">
-                                <rect key="frame" x="16" y="20" width="44" height="44"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="20" width="45" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Oub-A2-g8Q"/>
-                                    <constraint firstAttribute="height" constant="44" id="q2X-L1-iUs"/>
+                                    <constraint firstAttribute="width" constant="45" id="Oub-A2-g8Q"/>
+                                    <constraint firstAttribute="height" constant="46" id="q2X-L1-iUs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="Back" backgroundImage="sprite_button_background.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -272,5 +312,7 @@
     </scenes>
     <resources>
         <image name="sprite_arrow_down.png" width="63" height="128"/>
+        <image name="sprite_button_background.png" width="45" height="46"/>
+        <image name="sprite_menu_background.png" width="568" height="320"/>
     </resources>
 </document>

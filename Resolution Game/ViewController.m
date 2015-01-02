@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    IBOutletCollection(UIButton) NSArray *_buttons;
+}
 
 @end
 
@@ -18,7 +20,13 @@
 {
 
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // update button background images to a resizeable version
+    UIImage *backgroundImage = [UIImage imageNamed:@"sprite_button_background.png"];
+    UIImage *resizeableImage = [backgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(4.0f, 4.0f, 4.0f + 5.0f, 4.0f + 5.0f)];
+    for (UIButton *button in _buttons) {
+        [button setBackgroundImage:resizeableImage forState:UIControlStateNormal];
+    }
 
 }
 
