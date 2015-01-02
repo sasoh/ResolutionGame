@@ -14,11 +14,16 @@
     NSDate *_lastFrameDate;
     TimelineView *_timelineView;
     NSTimer *_gameTimer;
+    
+    CAEmitterLayer *_emitterLayer;
+    CAEmitterCell *_starExplosionEmitterCell;
 }
 
 - (void)recursivelyAnimateFromNumber:(int)number;
 - (void)animateCountIn;
 - (void)update:(CADisplayLink *)sender;
+- (void)configureParticleSystems;
+- (void)addParticleExplosion;
 
 @end
 
@@ -40,6 +45,8 @@
         
         _currentScore = 0;
         [_scoreLabel setText:[NSString stringWithFormat:@"Score: %d", _currentScore]];
+        
+        [self configureParticleSystems];
     } else {
         NSLog(@"Failed loading level info.");
     }
@@ -59,6 +66,56 @@
 {
     
     [_gameTimer invalidate];
+    
+}
+
+- (void)configureParticleSystems
+{
+    
+    if (_starExplosionEmitterCell == nil) {
+        NSString *filename = @"sprite_particle_star.png";
+        UIImage *image = [UIImage imageNamed:filename];
+        _starExplosionEmitterCell = [CAEmitterCell emitterCell];
+        [_starExplosionEmitterCell setName:@"star_explosion"];
+        [_starExplosionEmitterCell setBirthRate:0.0f];
+        [_starExplosionEmitterCell setEmissionRange:2 * M_PI];
+        [_starExplosionEmitterCell setYAcceleration:80];
+        [_starExplosionEmitterCell setVelocity:40.0];
+        [_starExplosionEmitterCell setScale:0.5f];
+        [_starExplosionEmitterCell setScaleSpeed:-0.5f];
+        [_starExplosionEmitterCell setAlphaSpeed:-0.5f];
+        [_starExplosionEmitterCell setContents:(id)image.CGImage];
+        [_starExplosionEmitterCell setLifetime:1.0f];
+        [_starExplosionEmitterCell setLifetimeRange:0.2f];
+        [_starExplosionEmitterCell setSpin:0.0f];
+        [_starExplosionEmitterCell setSpinRange:4 * M_PI];
+        
+        _emitterLayer = [CAEmitterLayer layer];
+        [_emitterLayer setEmitterCells:@[_starExplosionEmitterCell]];
+        CGRect bounds = [self bounds];
+        [_emitterLayer setFrame:bounds];
+        CGPoint emitterPosition = [_scoreLabel frame].origin;
+        emitterPosition.x += [_scoreLabel frame].size.width - 30.0f;
+        [_emitterLayer setEmitterPosition:emitterPosition];
+        [_emitterLayer setEmitterSize:(CGSize){10.0f, 10.0f}];
+        [_emitterLayer setEmitterShape:kCAEmitterLayerRectangle];
+        [_emitterLayer setRenderMode:kCAEmitterLayerBackToFront];
+        [[self layer] addSublayer:_emitterLayer];
+        
+        [self setClipsToBounds:YES];
+    }
+    
+}
+
+- (void)addParticleExplosion
+{
+    
+    [_emitterLayer setValue:@(50) forKeyPath:@"emitterCells.star_explosion.birthRate"];
+    
+    CGFloat delay = 0.25f;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_emitterLayer setValue:@(0) forKeyPath:@"emitterCells.star_explosion.birthRate"];
+    });
     
 }
 
@@ -135,6 +192,12 @@
     CGFloat multiplier = [resultInfo[@"multiplier"] floatValue];
     _currentScore += multiplier * score;
     [_scoreLabel setText:[NSString stringWithFormat:@"Score: %d", _currentScore]];
+    
+    if ([resultInfo[@"success"] boolValue] == YES) {
+        if (multiplier - 1.0f > 0.01f) {
+            [self addParticleExplosion];
+        }
+    }
     
 }
 
