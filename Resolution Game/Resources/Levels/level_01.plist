@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>title</key>
-	<string>Level 01</string>
+	<string>Level 01 - normal speed</string>
 	<key>speed</key>
 	<integer>40</integer>
 	<key>parts</key>

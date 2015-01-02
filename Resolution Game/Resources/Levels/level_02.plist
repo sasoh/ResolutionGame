@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>title</key>
-	<string>Level 02</string>
+	<string>Level 02 - high speed</string>
 	<key>speed</key>
-	<integer>120</integer>
+	<integer>100</integer>
 	<key>parts</key>
 	<array>
 		<dict>
@@ -76,7 +76,7 @@
 		</dict>
 		<dict>
 			<key>length</key>
-			<integer>100</integer>
+			<integer>50</integer>
 			<key>type</key>
 			<integer>3</integer>
 		</dict>
