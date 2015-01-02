@@ -100,7 +100,7 @@
 - (void)createInitialSegments
 {
     
-    const static CGFloat offset = 5.0f; // some additional pixels for the check so no edge is visible
+    const static CGFloat offset = 100.0f; // some additional pixels for the check so no edge is visible
     while (_rightmostPosition < [self frame].size.width + offset) {
         [self loadNextSegment];
     }
@@ -167,8 +167,7 @@
         return;
     }
     
-    // infinite random generation for now
-    const static CGFloat offset = 5.0f; // some additional pixels for the check so no edge is visible
+    const static CGFloat offset = 100.0f; // some additional pixels for the check so no edge is visible
     if (_rightmostPosition < [self frame].size.width + offset) {
         [self loadNextSegment];
     }

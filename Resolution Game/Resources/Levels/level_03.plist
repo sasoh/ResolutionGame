@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>title</key>
-	<string>Level 1 easy, slow speed</string>
+	<string>Level 3 hard, fast speed</string>
 	<key>speed</key>
-	<integer>40</integer>
+	<integer>100</integer>
 	<key>parts</key>
 	<array>
 		<dict>
 			<key>length</key>
 			<integer>100</integer>
 			<key>type</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>length</key>
@@ -24,11 +24,29 @@
 			<key>length</key>
 			<integer>100</integer>
 			<key>type</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>length</key>
 			<integer>100</integer>
+			<key>type</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>length</key>
+			<integer>50</integer>
+			<key>type</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>length</key>
+			<integer>50</integer>
+			<key>type</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>length</key>
+			<integer>50</integer>
 			<key>type</key>
 			<integer>3</integer>
 		</dict>
@@ -48,37 +66,19 @@
 			<key>length</key>
 			<integer>100</integer>
 			<key>type</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>length</key>
 			<integer>50</integer>
 			<key>type</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>length</key>
-			<integer>100</integer>
+			<integer>50</integer>
 			<key>type</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>length</key>
-			<integer>50</integer>
-			<key>type</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>length</key>
-			<integer>100</integer>
-			<key>type</key>
-			<integer>4</integer>
-		</dict>
-		<dict>
-			<key>length</key>
-			<integer>50</integer>
-			<key>type</key>
-			<integer>1</integer>
 		</dict>
 	</array>
 </dict>
