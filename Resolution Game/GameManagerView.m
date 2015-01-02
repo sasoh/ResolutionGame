@@ -131,16 +131,10 @@
 - (void)timeline:(TimelineView *)timeline didProcessButtonWithResult:(NSDictionary *)resultInfo
 {
     
-    BOOL success = [resultInfo[@"success"] boolValue];
-    
-    if (success == YES) {
-        int score = [resultInfo[@"score"] intValue];
-        CGFloat multiplier = [resultInfo[@"multiplier"] floatValue];
-        _currentScore += multiplier * score;
-        [_scoreLabel setText:[NSString stringWithFormat:@"Score: %d", _currentScore]];
-    } else {
-        NSLog(@"Mistake!");
-    }
+    int score = [resultInfo[@"score"] intValue];
+    CGFloat multiplier = [resultInfo[@"multiplier"] floatValue];
+    _currentScore += multiplier * score;
+    [_scoreLabel setText:[NSString stringWithFormat:@"Score: %d", _currentScore]];
     
 }
 
