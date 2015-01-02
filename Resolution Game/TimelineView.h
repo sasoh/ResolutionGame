@@ -15,7 +15,7 @@ static NSString *kTimelineViewLevelEndNotification = @"kTimelineViewLevelEndNoti
 @protocol TimelineViewDelegate <NSObject>
 
 @required
-- (void)timeline:(TimelineView *)timeline didProcessButtonWithSuccess:(BOOL)success;
+- (void)timeline:(TimelineView *)timeline didProcessButtonWithResult:(NSDictionary *)resultInfo;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @interface GameManagerView () {
     IBOutlet UIImageView *_arrowView;
+    IBOutlet UILabel *_scoreLabel;
     NSDate *_lastFrameDate;
     TimelineView *_timelineView;
     NSTimer *_gameTimer;
@@ -27,12 +28,18 @@
 {
     
     if (_levelInfo != nil) {
+        // remove old timeline if existant
+        [_timelineView removeFromSuperview];
+        
         // init timeline object & let it prepare first part of map
         _timelineView = [[TimelineView alloc] initWithFrame:CGRectMake(0.0f, [_arrowView frame].origin.y + [_arrowView frame].size.height, [self frame].size.width, 50.0f)];
         [_timelineView setDelegate:self]; // cast to suppress warning
         [_timelineView setupForLevel:_levelInfo];
         [_timelineView setHidden:YES];
         [self addSubview:_timelineView];
+        
+        _currentScore = 0;
+        [_scoreLabel setText:[NSString stringWithFormat:@"Score: %d", _currentScore]];
     } else {
         NSLog(@"Failed loading level info.");
     }
@@ -41,6 +48,8 @@
 
 - (void)start
 {
+    
+    [_arrowView setHidden:YES];
     
     [self animateCountIn];
     
@@ -119,13 +128,18 @@
 }
 
 #pragma mark - Timeline view delegate method
-- (void)timeline:(TimelineView *)timeline didProcessButtonWithSuccess:(BOOL)success
+- (void)timeline:(TimelineView *)timeline didProcessButtonWithResult:(NSDictionary *)resultInfo
 {
     
+    BOOL success = [resultInfo[@"success"] boolValue];
+    
     if (success == YES) {
-        NSLog(@"Multiplier up!");
+        int score = [resultInfo[@"score"] intValue];
+        CGFloat multiplier = [resultInfo[@"multiplier"] floatValue];
+        _currentScore += multiplier * score;
+        [_scoreLabel setText:[NSString stringWithFormat:@"Score: %d", _currentScore]];
     } else {
-        NSLog(@"Multiplier reset.");
+        NSLog(@"Mistake!");
     }
     
 }

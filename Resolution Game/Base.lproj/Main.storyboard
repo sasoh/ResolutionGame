@@ -224,14 +224,27 @@
                                                     <constraint firstAttribute="height" constant="128" id="dRc-tU-Bgg"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G93-yJ-BAK">
+                                                <rect key="frame" x="162" y="0.0" width="190" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="dFK-qS-bcr"/>
+                                                    <constraint firstAttribute="width" constant="190" id="v0p-ZG-liy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="ata-NX-MeB" secondAttribute="centerY" constant="26" id="5qH-WP-xJv"/>
+                                            <constraint firstItem="G93-yJ-BAK" firstAttribute="top" secondItem="ZK4-1W-yZh" secondAttribute="top" id="awr-x1-t1l"/>
                                             <constraint firstAttribute="centerX" secondItem="ata-NX-MeB" secondAttribute="centerX" id="pcv-DL-uXP"/>
+                                            <constraint firstAttribute="trailing" secondItem="G93-yJ-BAK" secondAttribute="trailing" id="qfe-t9-yfS"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="_arrowView" destination="ata-NX-MeB" id="L0y-Rn-azp"/>
+                                            <outlet property="_scoreLabel" destination="G93-yJ-BAK" id="uKW-Hp-MS9"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -270,14 +283,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeX-e1-NFU">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level finished!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deZ-4r-avx">
-                                        <rect key="frame" x="229" y="116" width="110" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level finished!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deZ-4r-avx">
+                                        <rect key="frame" x="229" y="109" width="110" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="9ul-s3-P10"/>
+                                            <constraint firstAttribute="height" constant="21" id="dUU-CQ-WYN"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1S-cd-Gkc">
-                                        <rect key="frame" x="224" y="167" width="120" height="46"/>
+                                        <rect key="frame" x="224" y="221" width="120" height="46"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="3aI-9N-tZT"/>
@@ -292,11 +309,43 @@
                                             <action selector="didPressBackButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="EDi-gS-6eS"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-7Q-Kgn">
+                                        <rect key="frame" x="224" y="167" width="120" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="YSa-7D-gmi"/>
+                                            <constraint firstAttribute="height" constant="46" id="m2G-Fe-VhQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Retry" backgroundImage="sprite_button_background.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressRetryButton:" destination="NNd-Cl-KfY" eventType="touchUpInside" id="zym-Jj-aBe"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3c-bg-9Xq">
+                                        <rect key="frame" x="169" y="138" width="230" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="9N3-Qt-lFT"/>
+                                            <constraint firstAttribute="height" constant="21" id="brN-9v-xzg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="y3c-bg-9Xq" secondAttribute="centerX" id="36k-XM-msu"/>
+                                    <constraint firstAttribute="centerY" secondItem="zQl-7Q-Kgn" secondAttribute="centerY" constant="-30" id="5PI-Yp-kXB"/>
+                                    <constraint firstAttribute="centerY" secondItem="y3c-bg-9Xq" secondAttribute="centerY" constant="11.5" id="ASq-GB-YgZ"/>
+                                    <constraint firstAttribute="centerX" secondItem="zQl-7Q-Kgn" secondAttribute="centerX" id="CnR-eI-sLa"/>
                                     <constraint firstAttribute="centerX" secondItem="S1S-cd-Gkc" secondAttribute="centerX" id="DjL-Xd-Yhf"/>
-                                    <constraint firstAttribute="centerY" secondItem="S1S-cd-Gkc" secondAttribute="centerY" constant="-30" id="JLx-eG-58O"/>
+                                    <constraint firstAttribute="centerY" secondItem="S1S-cd-Gkc" secondAttribute="centerY" constant="-84" id="JLx-eG-58O"/>
+                                    <constraint firstAttribute="centerX" secondItem="deZ-4r-avx" secondAttribute="centerX" id="hMS-U9-X7W"/>
+                                    <constraint firstAttribute="centerY" secondItem="deZ-4r-avx" secondAttribute="centerY" constant="40.5" id="tlo-BQ-kU4"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -321,7 +370,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="_finishedBackButton" destination="S1S-cd-Gkc" id="a8K-Zz-ESm"/>
+                        <outlet property="_finishedScoreLabel" destination="y3c-bg-9Xq" id="AdE-YN-t2u"/>
                         <outlet property="_finishedView" destination="ZeX-e1-NFU" id="Cho-1C-PD4"/>
                         <outlet property="_gameManager" destination="ZK4-1W-yZh" id="1fl-Zm-jyD"/>
                         <outlet property="_mainView" destination="pOZ-ld-Kzg" id="Bd4-a9-TVb"/>
@@ -329,6 +378,8 @@
                         <outletCollection property="_actionButtons" destination="jLe-hA-BQD" id="Xfq-Pr-qHv"/>
                         <outletCollection property="_actionButtons" destination="GdR-Yc-j0U" id="gpo-xu-CTv"/>
                         <outletCollection property="_actionButtons" destination="OGI-LZ-jwO" id="aXs-C9-jXI"/>
+                        <outletCollection property="_finishedButtons" destination="zQl-7Q-Kgn" id="rpI-fL-aG3"/>
+                        <outletCollection property="_finishedButtons" destination="S1S-cd-Gkc" id="wYh-3j-nud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2B6-72-U9z" userLabel="First Responder" sceneMemberID="firstResponder"/>

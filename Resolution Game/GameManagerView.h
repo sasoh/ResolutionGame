@@ -13,7 +13,11 @@
 //! @details Handles level visualization & input handling
 @interface GameManagerView : UIView <TimelineViewDelegate>
 
+//! @brief Current level data
 @property (nonatomic, strong) NSDictionary *levelInfo;
+
+//! @brief Currently reached socre
+@property (nonatomic, readonly) int currentScore;
 
 //! @brief Clears game view & loads level
 - (void)setup;

@@ -35,6 +35,9 @@
     
     //! @brief Level scroll speed, px/sec
     CGFloat _speed;
+    
+    //! @brief Score multiplier
+    CGFloat _scoreMultiplier;
 }
 
 //! @brief Generates first segments before the game begins
@@ -49,11 +52,11 @@
 //! @brief Helper function that constructs new segments
 - (void)generateSegmentWithTag:(int)tag andLength:(CGFloat)length;
 
-////! @brief Spawns a segment of random tag [1; 4] & and length of 50 or 100px
-//- (void)generateRandomSegment;
-
 //! @brief Spawns next segment from list
 - (void)loadNextSegment;
+
+//! @brief Increases multiplier to next level
+- (void)increaseMultiplier;
 
 @end
 
@@ -77,6 +80,7 @@
     _currentSegmentIndex = 0;
     _segmentMarked = NO;
     _levelInfo = levelInfo;
+    _scoreMultiplier = 0.5f; // on success it's doubled and that gives multiplier 1 for the first segment
     _speed = [_levelInfo[@"speed"] floatValue];
     
     [self setClipsToBounds:YES];
@@ -102,27 +106,6 @@
     }
     
 }
-
-//- (void)generateRandomSegment
-//{
-//    
-//    // random length
-//    CGFloat length = 50.0f;
-//    if (rand() % 2 == 0) {
-//        length += 50.0f;
-//    }
-//    
-//    // prevent successive segments of same color
-//    static int lastGenerated = 0;
-//    int randomTag = 0;
-//    do {
-//        randomTag = (rand() % 4) + 1;
-//    } while (randomTag == lastGenerated);
-//    lastGenerated = randomTag;
-//    
-//    [self generateSegmentWithTag:randomTag andLength:length];
-//    
-//}
 
 - (void)loadNextSegment
 {
@@ -152,14 +135,21 @@
     [segmentBase setBackgroundColor:[UIColor blackColor]];
     [segmentBase setTag:tag];
     [self addSubview:segmentBase];
+    [_segmentsArray addObject:segmentBase];
+    
+    _rightmostPosition = [segmentBase frame].origin.x + [segmentBase frame].size.width;
     
     UIView *segment = [[UIView alloc] initWithFrame:CGRectMake(baseBorder / 2, baseBorder, length - baseBorder, [self frame].size.height - 2 * baseBorder)];
     [segment setBackgroundColor:colors[tag - 1]];
     [segmentBase addSubview:segment];
     
-    [_segmentsArray addObject:segmentBase];
+}
+
+- (void)increaseMultiplier
+{
     
-    _rightmostPosition = [segmentBase frame].origin.x + [segmentBase frame].size.width;
+    // simple progression
+    _scoreMultiplier *= 2;
     
 }
 
@@ -195,7 +185,12 @@
                 
                 if (_segmentMarked == NO) {
                     // user failed to answer in time
-                    [_delegate timeline:self didProcessButtonWithSuccess:NO];
+                    _scoreMultiplier = 0.5f;
+                    NSDictionary *result = @{
+                                             @"success": @(NO)
+                                             };
+                    
+                    [_delegate timeline:self didProcessButtonWithResult:result];
                 }
                 
                 _segmentMarked = NO;
@@ -222,12 +217,27 @@
     
     BOOL success = NO;
     
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    
     if (index == (int)[_currentSegment tag] && _segmentMarked == NO) {
         _segmentMarked = YES;
         success = YES;
+        
+        // score from tiles equal for now
+        int tileScore = 100;
+        result[@"score"] = @(tileScore);
+        
+        [self increaseMultiplier];
+    }
+    result[@"success"] = @(success);
+    
+    if (success == NO) {
+        // reset multiplier
+        _scoreMultiplier = 0.5f;
     }
     
-    [_delegate timeline:self didProcessButtonWithSuccess:success];
+    result[@"multiplier"] = @(_scoreMultiplier);
+    [_delegate timeline:self didProcessButtonWithResult:result];
     
 }
 
