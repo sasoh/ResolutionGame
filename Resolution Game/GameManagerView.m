@@ -185,6 +185,7 @@
 }
 
 #pragma mark - Timeline view delegate method
+
 - (void)timeline:(TimelineView *)timeline didProcessButtonWithResult:(NSDictionary *)resultInfo
 {
     

@@ -11,10 +11,12 @@
 
 @interface LevelSelectViewController () {
     NSArray *_levelsArray;
+    StageView *_stageView;
     int _selectedIndex;
 }
 
 - (void)loadLevelInfo;
+- (void)loadStage:(StageViewType)type;
 
 @end
 
@@ -25,6 +27,9 @@
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // initial value should be stage 1
+    [self loadStage:StageViewTypePreparation];
 
 }
 
@@ -38,11 +43,9 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
     UIViewController *vc = [segue destinationViewController];
     if ([vc isMemberOfClass:[GameScreenViewController class]] == YES) {
         if (_selectedIndex >= 0 && _selectedIndex < [_levelsArray count]) {
@@ -58,22 +61,15 @@
 {
     
     [super viewWillAppear:animated];
- 
-    [_loadingView setHidden:NO];
     
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    
-    [super viewDidAppear:animated];
-    
-    [self loadLevelInfo];
+    _selectedIndex = -1;
     
 }
 
 - (void)loadLevelInfo
 {
+    
+    [_loadingView setHidden:NO];
     
     dispatch_queue_t myQueue = dispatch_queue_create("Level Load Queue",NULL);
     dispatch_async(myQueue, ^{
@@ -93,7 +89,6 @@
         _levelsArray = [[NSArray alloc] initWithArray:fileList];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_tableView reloadData];
             [_loadingView setHidden:YES];
         });
     });
@@ -107,34 +102,54 @@
     
 }
 
-#pragma mark - Table view methods
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (IBAction)didPressStageButton:(id)sender
 {
     
-    return [_levelsArray count];
+    int tag = (int)[sender tag];
+    
+    StageViewType targetStage = StageViewTypeNone;
+    
+    if (tag == 1) {
+        targetStage = StageViewTypePreparation;
+    } else if (tag == 2) {
+        targetStage = StageViewTypeSiege;
+    } else if (tag == 3) {
+        targetStage = StageViewTypeRepair;
+    }
+    
+    [self loadStage:targetStage];
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)loadStage:(StageViewType)type
 {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"levelSelectCellIdentifier"];
+    // remove any existing stage views
+    while ([[_stageContainerView subviews] count] > 0) {
+        [[[_stageContainerView subviews] lastObject] removeFromSuperview];
+    }
     
-    NSDictionary *levelInfo = _levelsArray[[indexPath row]];
-    [[cell textLabel] setText:levelInfo[@"title"]];
-    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    // create new stage
+    if (type > StageViewTypeNone && type <= StageViewTypeRepair) {
+        _stageView = [StageViewFactory stageViewWithType:type andSuperView:_stageContainerView andDelegate:self];
+    } else {
+        NSLog(@"Stage view type out of bounds.");
+    }
     
-    return cell;
+    [self loadLevelInfo];
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Stage view delegate
+
+- (void)stageView:(StageView *)view didPressButtonWithIndex:(int)index
 {
-    
-    _selectedIndex = (int)[indexPath row];
+
+    _selectedIndex = index;
     
     // segue from here to preserve correct order of operations
     [self performSegueWithIdentifier:@"gameSegue" sender:nil];
+    
     
 }
 

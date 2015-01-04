@@ -15,6 +15,20 @@
 		2D4F9B021A55F1B2001FCBA2 /* sprite_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F9B001A55F1B2001FCBA2 /* sprite_arrow_down.png */; };
 		2D4F9B031A55F1B2001FCBA2 /* sprite_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F9B011A55F1B2001FCBA2 /* sprite_arrow_down@2x.png */; };
 		2D4F9B071A55FF34001FCBA2 /* TimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F9B061A55FF34001FCBA2 /* TimelineView.m */; };
+		2D6CA0891A597E6100597C6A /* sprite_background_castle_siege.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0831A597E6100597C6A /* sprite_background_castle_siege.png */; };
+		2D6CA08A1A597E6100597C6A /* sprite_background_castle_siege@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0841A597E6100597C6A /* sprite_background_castle_siege@2x.png */; };
+		2D6CA08B1A597E6100597C6A /* sprite_background_castle_siege_prep.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0851A597E6100597C6A /* sprite_background_castle_siege_prep.png */; };
+		2D6CA08C1A597E6100597C6A /* sprite_background_castle_siege_prep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0861A597E6100597C6A /* sprite_background_castle_siege_prep@2x.png */; };
+		2D6CA08D1A597E6100597C6A /* sprite_background_castle_siege_repair.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0871A597E6100597C6A /* sprite_background_castle_siege_repair.png */; };
+		2D6CA08E1A597E6100597C6A /* sprite_background_castle_siege_repair@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0881A597E6100597C6A /* sprite_background_castle_siege_repair@2x.png */; };
+		2D6CA0921A597F2000597C6A /* StageViewPreparation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CA0911A597F2000597C6A /* StageViewPreparation.m */; };
+		2D6CA0961A597F4D00597C6A /* StageViewPreparation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0951A597F4D00597C6A /* StageViewPreparation.xib */; };
+		2D6CA0991A597F6800597C6A /* StageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CA0981A597F6800597C6A /* StageView.m */; };
+		2D6CA09C1A59830D00597C6A /* StageViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CA09B1A59830D00597C6A /* StageViewFactory.m */; };
+		2D6CA0A31A59888700597C6A /* StageViewRepair.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CA09E1A59888700597C6A /* StageViewRepair.m */; };
+		2D6CA0A41A59888700597C6A /* StageViewRepair.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA09F1A59888700597C6A /* StageViewRepair.xib */; };
+		2D6CA0A51A59888700597C6A /* StageViewSiege.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CA0A11A59888700597C6A /* StageViewSiege.m */; };
+		2D6CA0A61A59888700597C6A /* StageViewSiege.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CA0A21A59888700597C6A /* StageViewSiege.xib */; };
 		2D7460A51A55974E00A2B9CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460A41A55974E00A2B9CA /* main.m */; };
 		2D7460A81A55974E00A2B9CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460A71A55974E00A2B9CA /* AppDelegate.m */; };
 		2D7460AB1A55974E00A2B9CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7460AA1A55974E00A2B9CA /* ViewController.m */; };
@@ -41,6 +55,25 @@
 		2D4F9B011A55F1B2001FCBA2 /* sprite_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_arrow_down@2x.png"; sourceTree = "<group>"; };
 		2D4F9B051A55FF34001FCBA2 /* TimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineView.h; sourceTree = "<group>"; };
 		2D4F9B061A55FF34001FCBA2 /* TimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineView.m; sourceTree = "<group>"; };
+		2D6CA0831A597E6100597C6A /* sprite_background_castle_siege.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_background_castle_siege.png; sourceTree = "<group>"; };
+		2D6CA0841A597E6100597C6A /* sprite_background_castle_siege@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_background_castle_siege@2x.png"; sourceTree = "<group>"; };
+		2D6CA0851A597E6100597C6A /* sprite_background_castle_siege_prep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_background_castle_siege_prep.png; sourceTree = "<group>"; };
+		2D6CA0861A597E6100597C6A /* sprite_background_castle_siege_prep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_background_castle_siege_prep@2x.png"; sourceTree = "<group>"; };
+		2D6CA0871A597E6100597C6A /* sprite_background_castle_siege_repair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_background_castle_siege_repair.png; sourceTree = "<group>"; };
+		2D6CA0881A597E6100597C6A /* sprite_background_castle_siege_repair@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_background_castle_siege_repair@2x.png"; sourceTree = "<group>"; };
+		2D6CA0901A597F2000597C6A /* StageViewPreparation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageViewPreparation.h; path = Stages/StageViewPreparation.h; sourceTree = "<group>"; };
+		2D6CA0911A597F2000597C6A /* StageViewPreparation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageViewPreparation.m; path = Stages/StageViewPreparation.m; sourceTree = "<group>"; };
+		2D6CA0951A597F4D00597C6A /* StageViewPreparation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StageViewPreparation.xib; path = Stages/StageViewPreparation.xib; sourceTree = "<group>"; };
+		2D6CA0971A597F6800597C6A /* StageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageView.h; path = Stages/StageView.h; sourceTree = "<group>"; };
+		2D6CA0981A597F6800597C6A /* StageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageView.m; path = Stages/StageView.m; sourceTree = "<group>"; };
+		2D6CA09A1A59830D00597C6A /* StageViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageViewFactory.h; path = Stages/StageViewFactory.h; sourceTree = "<group>"; };
+		2D6CA09B1A59830D00597C6A /* StageViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageViewFactory.m; path = Stages/StageViewFactory.m; sourceTree = "<group>"; };
+		2D6CA09D1A59888700597C6A /* StageViewRepair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageViewRepair.h; path = Stages/StageViewRepair.h; sourceTree = "<group>"; };
+		2D6CA09E1A59888700597C6A /* StageViewRepair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageViewRepair.m; path = Stages/StageViewRepair.m; sourceTree = "<group>"; };
+		2D6CA09F1A59888700597C6A /* StageViewRepair.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StageViewRepair.xib; path = Stages/StageViewRepair.xib; sourceTree = "<group>"; };
+		2D6CA0A01A59888700597C6A /* StageViewSiege.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StageViewSiege.h; path = Stages/StageViewSiege.h; sourceTree = "<group>"; };
+		2D6CA0A11A59888700597C6A /* StageViewSiege.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StageViewSiege.m; path = Stages/StageViewSiege.m; sourceTree = "<group>"; };
+		2D6CA0A21A59888700597C6A /* StageViewSiege.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StageViewSiege.xib; path = Stages/StageViewSiege.xib; sourceTree = "<group>"; };
 		2D74609F1A55974E00A2B9CA /* Resolution Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resolution Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7460A31A55974E00A2B9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7460A41A55974E00A2B9CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +153,39 @@
 			name = Timeline;
 			sourceTree = "<group>";
 		};
+		2D6CA0821A597E6100597C6A /* Castle Map */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CA0831A597E6100597C6A /* sprite_background_castle_siege.png */,
+				2D6CA0841A597E6100597C6A /* sprite_background_castle_siege@2x.png */,
+				2D6CA0851A597E6100597C6A /* sprite_background_castle_siege_prep.png */,
+				2D6CA0861A597E6100597C6A /* sprite_background_castle_siege_prep@2x.png */,
+				2D6CA0871A597E6100597C6A /* sprite_background_castle_siege_repair.png */,
+				2D6CA0881A597E6100597C6A /* sprite_background_castle_siege_repair@2x.png */,
+			);
+			path = "Castle Map";
+			sourceTree = "<group>";
+		};
+		2D6CA08F1A597F0100597C6A /* Stages */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CA0971A597F6800597C6A /* StageView.h */,
+				2D6CA0981A597F6800597C6A /* StageView.m */,
+				2D6CA09A1A59830D00597C6A /* StageViewFactory.h */,
+				2D6CA09B1A59830D00597C6A /* StageViewFactory.m */,
+				2D6CA0901A597F2000597C6A /* StageViewPreparation.h */,
+				2D6CA0911A597F2000597C6A /* StageViewPreparation.m */,
+				2D6CA0951A597F4D00597C6A /* StageViewPreparation.xib */,
+				2D6CA09D1A59888700597C6A /* StageViewRepair.h */,
+				2D6CA09E1A59888700597C6A /* StageViewRepair.m */,
+				2D6CA09F1A59888700597C6A /* StageViewRepair.xib */,
+				2D6CA0A01A59888700597C6A /* StageViewSiege.h */,
+				2D6CA0A11A59888700597C6A /* StageViewSiege.m */,
+				2D6CA0A21A59888700597C6A /* StageViewSiege.xib */,
+			);
+			name = Stages;
+			sourceTree = "<group>";
+		};
 		2D7460961A55974E00A2B9CA = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +230,7 @@
 		2D7460C81A55996A00A2B9CA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2D6CA08F1A597F0100597C6A /* Stages */,
 				2D7460A91A55974E00A2B9CA /* ViewController.h */,
 				2D7460AA1A55974E00A2B9CA /* ViewController.m */,
 				2D7460C91A55998100A2B9CA /* GameScreenViewController.h */,
@@ -179,6 +246,7 @@
 		2DD0A9A81A5617E500F2FF79 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				2D6CA0821A597E6100597C6A /* Castle Map */,
 				2DD0A9A91A5617E500F2FF79 /* sprite_button_background.png */,
 				2DD0A9AA1A5617E500F2FF79 /* sprite_button_background@2x.png */,
 				2DD0A9AB1A5617E500F2FF79 /* sprite_menu_background.png */,
@@ -244,17 +312,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6CA0A61A59888700597C6A /* StageViewSiege.xib in Resources */,
+				2D6CA0891A597E6100597C6A /* sprite_background_castle_siege.png in Resources */,
 				2D4F9B021A55F1B2001FCBA2 /* sprite_arrow_down.png in Resources */,
 				2D4F9B031A55F1B2001FCBA2 /* sprite_arrow_down@2x.png in Resources */,
 				2D7460AE1A55974E00A2B9CA /* Main.storyboard in Resources */,
+				2D6CA08E1A597E6100597C6A /* sprite_background_castle_siege_repair@2x.png in Resources */,
 				2D092D6A1A571986005AFDE1 /* sprite_particle_star@2x.png in Resources */,
+				2D6CA0A41A59888700597C6A /* StageViewRepair.xib in Resources */,
 				2D092D691A571986005AFDE1 /* sprite_particle_star.png in Resources */,
 				2D7460B31A55974E00A2B9CA /* LaunchScreen.xib in Resources */,
+				2D6CA0961A597F4D00597C6A /* StageViewPreparation.xib in Resources */,
+				2D6CA08A1A597E6100597C6A /* sprite_background_castle_siege@2x.png in Resources */,
 				2DD0A9B01A5617E500F2FF79 /* sprite_menu_background@2x.png in Resources */,
+				2D6CA08B1A597E6100597C6A /* sprite_background_castle_siege_prep.png in Resources */,
+				2D6CA08C1A597E6100597C6A /* sprite_background_castle_siege_prep@2x.png in Resources */,
 				2D37D81B1A56A9B900127E0E /* Levels in Resources */,
 				2DD0A9AD1A5617E500F2FF79 /* sprite_button_background.png in Resources */,
 				2DD0A9AE1A5617E500F2FF79 /* sprite_button_background@2x.png in Resources */,
 				2D7460B01A55974E00A2B9CA /* Images.xcassets in Resources */,
+				2D6CA08D1A597E6100597C6A /* sprite_background_castle_siege_repair.png in Resources */,
 				2DD0A9AF1A5617E500F2FF79 /* sprite_menu_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,12 +344,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7460AB1A55974E00A2B9CA /* ViewController.m in Sources */,
+				2D6CA0991A597F6800597C6A /* StageView.m in Sources */,
+				2D6CA09C1A59830D00597C6A /* StageViewFactory.m in Sources */,
 				2D4F9AFC1A55C335001FCBA2 /* GameManagerView.m in Sources */,
 				2D7460A81A55974E00A2B9CA /* AppDelegate.m in Sources */,
+				2D6CA0921A597F2000597C6A /* StageViewPreparation.m in Sources */,
 				2D4F9B071A55FF34001FCBA2 /* TimelineView.m in Sources */,
 				2D7460CB1A55998100A2B9CA /* GameScreenViewController.m in Sources */,
+				2D6CA0A51A59888700597C6A /* StageViewSiege.m in Sources */,
 				2D37D8191A56A6CF00127E0E /* LevelSelectViewController.m in Sources */,
 				2D7460A51A55974E00A2B9CA /* main.m in Sources */,
+				2D6CA0A31A59888700597C6A /* StageViewRepair.m in Sources */,
 				2D7460CE1A55998E00A2B9CA /* HelpScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

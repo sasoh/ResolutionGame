@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StageViewFactory.h"
 
-@interface LevelSelectViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface LevelSelectViewController : UIViewController <StageViewDelegate> {
     IBOutlet UIView *_loadingView;
-    IBOutlet UITableView *_tableView;
+    IBOutlet UIView *_stageContainerView;
 }
 
 @end
