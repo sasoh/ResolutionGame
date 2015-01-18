@@ -145,7 +145,7 @@
 - (void)stageView:(StageView *)view didPressButtonWithIndex:(int)index
 {
 
-    _selectedIndex = index;
+    _selectedIndex = index - 1;
     
     // segue from here to preserve correct order of operations
     [self performSegueWithIdentifier:@"gameSegue" sender:nil];
